@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Internet users growth",
+    "width": 1200,
+    "height": 600,
+    "projection": {"type": "equalEarth"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/Krossic/FIT3179/ASSIGNMENT2/main/js/ne_10m_admin_0_countries.topojson",
+      "format": {"type": "topojson", "feature": "ne_10m_admin_0_countries"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.NAME",
+        "from": {
+          "data": {
+            "url": "https://github.com/Krossic/FIT3179/ASSIGNMENT2/blob/main/data/number-of-internet-users-by-country.csv"
+          },
+          "key": "Country"
+        }
+      },
+      {"calculate": "datum.people + 0.1", "as": "Internet Users"}
+    ],
+    "mark": {"type": "geoshape"},
+    "encoding": {
+      "color": {
+        "field": "Internet Users",
+        "type": "quantitative",
+        "scale":{
+          "domain": [1000000, 5000000, 10000000],
+          "range": ["#0000ff", "#0080ff", "#00ffff"]
+        }
+      },
+      "tooltip": [
+        {"field": "properties.NAME", "type": "nominal", "title": "Country"}
+      ]
+    }
+    
+}

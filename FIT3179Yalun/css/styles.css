@@ -1,0 +1,26 @@
+#symbol_map {
+	top:100px;
+	bottom: 100px; 
+	left: 100px;
+	right: 100px;
+}
+
+html{
+	font-family: 'Bahnschrift', sans-serif;
+}
+
+#top-title {
+	text-align: center;
+	font-size: 18px;
+}
+
+.p {
+	text-align: end;
+}
+
+#intro {
+	padding: 1% 7%;
+	text-align: center;
+	font-size: 18px;
+	width: 80%;
+}
