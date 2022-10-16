@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>FIT3179 Visualisation 2</title>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
+</head>
+<body>
+
+<div id="top-title">
+  <h1> <u>Internet Users around the world in 2016 Report</u> </h1>
+  <div id = "details">
+    <p><b>Author: Yalun Han</b></p>
+    <p><b>Date: 16/10/2022</b></p>
+  </div>
+</div>
+
+<div id = "intro">
+  <p>This data visualisation indicates the number of internet users in the world in 2016. Through this visualisation, you would also see the country with the most amount of people using network and the country with the least amount
+    of the people  using network in 2016.
+  </p>
+</div>
+
+<div id = "symbol_map"></div>
+
+<div id = "note1">
+  <i>Note: There are some countries that are not included in the dataset, which is why some of the places is grey.</i>
+</div>
+
+
+<div id = "intro_map"> 
+  <p> From the map above, it indicates the number of internet users around the world in 2016, it has been splited into few colours, light blue, blue, darker blue and etc. Due to the large number of people in the map,
+    a domain that contains larger values would suit the map. From the map, it shows the country with the most internet users in 2016 is <b>China</b> with <b>746,662,194</b> people using network, the country with least of people using
+    network is <b>Kiribati</b> with only <b>15,672</b> people.
+  </p>
+</div>
+
+<div id = "bar_chart"></div>
+
+<div id = "note2">
+  <i>Note: The countries are in descending order, this is for better showing the overall trend, which clearly indicates which country has the most internet users.</i>
+</div>
+
+<div style = "position:relative; left:80px; top:-280px; width: 40%">
+  <p>From the bar chart, it shows the first 10 countries with the most number of internet users in 2016, apparently the top country is China, this is because of its population base.
+    The thing that is surprising is that Japan, as the country that does not have a very large landscape, still managed to have more than <b>one hundred million people</b> that have internet access.
+    However, big countries like United Kindom could not make into the top 10 countries, which is weird, but based on the population, it is understandable for why it did not manage to get in.
+  </p>
+</div>
+
+
+
+
+<script type="text/javascript">
+  var spec2 = "js/symbol_map.vg.json";
+  vegaEmbed('#symbol_map', spec2).then(function(result) {
+  }).catch(console.error);
+</script>
+
+<script>
+  var vg_2 = "js/bar_chart.vg.json";
+  vegaEmbed("#bar_chart", vg_2).then(function (result) {
+  }).catch(console.error);
+</script>
+
+</body>
+</html>

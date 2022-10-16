@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Internet users around the world in 2016",
+    "width": 1200,
+    "height": 600,
+    "projection": {"type": "equalEarth"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/yhan0054/FIT3179/main/FIT3179Yalun/js/ne_10m_admin_0_countries.topojson",
+      "format": {"type": "topojson", "feature": "ne_10m_admin_0_countries"}
+    },
+    "layer": [
+      {
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {"tooltip": {"field": "note"}}
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/yhan0054/FIT3179/main/FIT3179Yalun/data/number-of-internet-users-by-country.csv"
+              },
+              "key": "Entity",
+              "fields": ["Internet Users", "Year"]
+            }
+          }
+        ],
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "color": {
+            "field": "Internet Users",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [1000000, 5000000, 10000000, 100000000,500000000,1000000000],
+              "range": ["#89CFF0", "#6495ED", "#0096FF", "#0000FF", "#0437F2", "#00008B"]
+            }
+          },
+          "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Entity"},
+            {"field": "Internet Users", "type": "quantitative"}
+          ]
+        }
+      }
+    ]
+    
+}

@@ -1,0 +1,12 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "The Top 10 countries with the most internet users in 2016",
+    "width": 850,
+    "height": 200,
+    "data": {"url": "https://raw.githubusercontent.com/yhan0054/FIT3179/main/FIT3179Yalun/data/top-10.csv"},
+    "mark": {"type": "bar", "tooltip": {"content": "data"}},
+    "encoding": {
+      "x": {"field": "Country", "type": "nominal", "sort": "-y"},
+      "y": {"field": "Internet Users", "type": "quantitative"}
+    }
+}
