@@ -50,14 +50,21 @@
 </div>
 
 <div style = "position:relative; left:80px; top:-280px; width: 40%">
-  <p>From the bar chart, it shows the first 10 countries with the most number of internet users in 2016, apparently the top country is China, this is because of its population base.
+  <p>
+    From the bar chart, it shows the first 10 countries with the most number of internet users in 2016, apparently the top country is China, this is because of its population base.
     The thing that is surprising is that Japan, as the country that does not have a very large landscape, still managed to have more than <b>one hundred million people</b> that have internet access.
     However, big countries like United Kindom could not make into the top 10 countries, which is weird, but based on the population, it is understandable for why it did not manage to get in.
   </p>
 </div>
 
+<div id = "line_chart"></div>
 
-
+<div style = "position:relative; left:1080px; top:-300px; width: 40%">
+  <p>
+    From this line chart, it indicates the top 10 countries with the most internet users in 2020, this is to have a comparison with the bar chart above. However, China and India are still
+    the top 2 countries with the most people using network in the country.
+  </p>
+</div>
 
 <script type="text/javascript">
   var spec2 = "js/symbol_map.vg.json";
@@ -68,6 +75,12 @@
 <script>
   var vg_2 = "js/bar_chart.vg.json";
   vegaEmbed("#bar_chart", vg_2).then(function (result) {
+  }).catch(console.error);
+</script>
+
+<script>
+  var vg_2 = "js/line_chart.vg.json";
+  vegaEmbed("#line_chart", vg_2).then(function (result) {
   }).catch(console.error);
 </script>
 
