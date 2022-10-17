@@ -1,0 +1,19 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Top 10 countries with the most internet users in 2020",
+    "width": 850,
+    "height": 200,
+    "data": {"url": "https://raw.githubusercontent.com/yhan0054/FIT3179/main/data/number-of-internet-users-by-country-2020.csv"},
+    "mark": {"type": "line", "tooltip": {"content": "data"}},
+    "encoding": {
+      "x": {"field": "Country", "type": "ordinal", "sort": "-y"},
+      "y": {"field": "Internet users", "type": "quantitative"},
+      "color" : {
+        "type" : "ordinal",
+        "field" : "Current users",
+        "scale": {
+          "range": ["green"]
+        }
+      }
+  }
+}
